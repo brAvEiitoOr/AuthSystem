@@ -4,7 +4,8 @@
   "description": "Program that simulates an auth and registry system",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src"
+    "dev": "nodemon src",
+    "start": "node src"
   },
   "keywords": [],
   "author": "Edwin Bravo",
