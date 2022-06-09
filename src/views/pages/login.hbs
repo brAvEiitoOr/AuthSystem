@@ -1,0 +1,85 @@
+{{!-- Page containing the login and register forms --}}
+
+<div style="min-height:100vh; height:100%; background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))">    
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+
+                        {{!-- Pills for the login and register forms --}}
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-pill" data-bs-toggle="pill" data-bs-target="#login" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-pill" data-bs-toggle="pill" data-bs-target="#register" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Register</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            {{!-- Login form --}}
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-pill" tabindex="0">
+                                <form action="/login" method="post">
+                                    <div class="form-outline mb-4">
+                                        <input type="text" class="form-control" name="username" id="username" required>
+                                        <label for="username" class="form-label" >Username</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="password" class="form-control" name="password" id="password" required>
+                                        <label for="password" class="form-label">Password</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                                </form>
+                            </div>
+
+                            {{!-- Register form --}}
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-pill" tabindex="0">
+                                <form action="/register" method="post">
+                                    <div class="form-outline mb-4">
+                                        <label for="id" class="form-label">Number ID</label>                                        
+                                        <input type="text" class="form-control" name="id" id="id" pattern="[0-9]{10}" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="lname" class="form-label">Last name</label>
+                                        <input type="text" class="form-control" name="lname" id="lname" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="fname" class="form-label">First name</label>
+                                        <input type="text" class="form-control" name="fname" id="fname" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="bday" class="form-label">Birthday</label>
+                                        <input type="date" class="form-control" name="bday" id="bday" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" class="form-control" name="username" id="username" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]|[_]).{8,}" required>
+                                        <label for="password" class="form-label">
+                                            Should have:
+                                            <ul>
+                                                <li>At least 8 characters</li>
+                                                <li>1 uppercase</li>
+                                                <li>1 lowercase</li>
+                                                <li>1 symbol</li>
+                                            </ul>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
