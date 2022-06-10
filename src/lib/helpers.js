@@ -12,4 +12,9 @@ helpers.matchPassword = async (password, hash) => {
     return correct;
 }
 
+helpers.datetimeToDate = (datetime) => {
+    const date = datetime.getDate()+'/'+(datetime.getMonth()+1)+'/'+datetime.getFullYear();
+    return date;
+}
+
 module.exports = helpers;

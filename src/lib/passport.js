@@ -14,6 +14,7 @@ passport.use('local.login', new Strategy({
         const user = rows[0];
         const validPass = await helpers.matchPassword(password,user.usr_passw);
         if (validPass){
+            await pool.query('INSERT INTO login_log VALUES (NULL,?,NULL)',[user.usr_id]);
             done(null, user);
         } else {
             done(null, false);
@@ -44,7 +45,9 @@ passport.use('local.register', new Strategy({
         usr_user: username
     }
     newUser.usr_passw = await helpers.encryptPassword(password);
+    await pool.query('INSERT INTO reg_log VALUES (NULL,?,NULL)',[id]);
     const result = await pool.query('INSERT INTO users SET ?', [newUser]);
+
     return done(null, newUser);
 }));
 

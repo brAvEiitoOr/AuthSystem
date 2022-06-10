@@ -21,22 +21,90 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mx-auto">
+    </div>
+    <div class="row">
+        <div class=" mx-auto m-1">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="text-center">User information</h2>
-                    <h3>Number ID</h3>
-                    <p>{{user.usr_id}}</p>
-                    <h3>Last name</h3>
-                    <p>{{user.usr_lname}}</p>
-                    <h3>First name</h3>
-                    <p>{{user.usr_fname}}</p>
-                    <h3>Birthday</h3>
-                    <p>{{user.usr_birthday}}</p>
-                    <h3>Email</h3>
-                    <p>{{user.usr_email}}</p>
-                    <h3>Username</h3>
-                    <p>{{user.usr_user}}</p>
+                    <h2 class="text-center">Users</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Last name</th>
+                                <th>First name</th>
+                                <th>Birthday</th>
+                                <th>Email</th>
+                                <th>User</th>
+                                <th>Password hash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each users}}
+                            <tr>
+                                <th>{{usr_id}}</th>
+                                <th>{{usr_lname}}</th>
+                                <th>{{usr_fname}}</th>
+                                <th>{{usr_birthday}}</th>
+                                <th>{{usr_email}}</th>
+                                <th>{{usr_user}}</th>
+                                <th>{{usr_passw}}</th>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto m-1">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center">Login log</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>User ID</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each loginLog}}
+                            <tr>
+                                <td>{{ll_id}}</td>
+                                <td>{{ll_user}}</td>
+                                <td>{{ll_time}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mx-auto m-1">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center">Register log</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>User ID</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each regLog}}
+                            <tr>
+                                <td>{{rl_id}}</td>
+                                <td>{{rl_user}}</td>
+                                <td>{{rl_time}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
